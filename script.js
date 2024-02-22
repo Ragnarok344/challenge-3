@@ -35,3 +35,37 @@ function getPasswordCriteria() {
     return null;
   }
 }
+// Add the selected character types to the array
+if (includeLowercase) {
+  characterTypes.push("abcdefghijklmnopqrstuvwxyz");
+}
+if (includeUppercase) {
+  characterTypes.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+}
+if (includeNumeric) {
+  characterTypes.push("0123456789");
+}
+if (includeSpecial) {
+  characterTypes.push("!@#$%^&*()_-=+;:,.?");
+}
+
+// Return the password criteria
+return {
+  length: length,
+  characterTypes: characterTypes
+};
+
+function generatePassword(criteria) {
+// creates an empty password?
+var password = "";
+// loop for looping through desired password length
+for (var i = 0; i < criteria.length; i++) {
+  //get random character from user specified characters.
+  var characterType = criteria.characterTypes[Math.floor(math.random()* criteria.characterTypes.length)];
+  var character = characterType[Math.floor(Math.random()*characterType.length)];
+  // adding the characters to the password?
+  password += character;
+
+}
+return password;
+}
