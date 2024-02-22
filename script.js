@@ -23,7 +23,7 @@ function getPasswordCriteria() {
     alert("Password length must be between 8 and 128 characters.");
     return null;
   }
-  // Get the desired character types from the user
+  // Get the desired character types from the user?
   var characterTypes = [];
   var includeLowercase = confirm("Do you want to include lowercase letters?");
   var includeUppercase = confirm("Do you want to include uppercase letters?");
