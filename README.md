@@ -5,3 +5,6 @@ Refactored a password generator that asks the user for password length, characte
 Screen shot <img>https://ibb.co/Nt7g8yJ</img>
 
 website link https://ragnarok344.github.io/challenge-3/
+
+
+Code sources https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference various sources for function ideas.
