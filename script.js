@@ -33,9 +33,9 @@ function getPasswordCriteria() {
   if (!includeLowercase && !includeUppercase && !includeNumeric && !includeSpecial) {
     alert("You must select at least one character type.");
     return null;
+
   }
-}
-// Add the selected character types to the array
+  // Add the selected character types to the array
 if (includeLowercase) {
   characterTypes.push("abcdefghijklmnopqrstuvwxyz");
 }
@@ -53,19 +53,43 @@ if (includeSpecial) {
 return {
   length: length,
   characterTypes: characterTypes
-};
-
+  };
+}
+// Function to generate a random password based on the given criteria
 function generatePassword(criteria) {
-// creates an empty password?
-var password = "";
-// loop for looping through desired password length
-for (var i = 0; i < criteria.length; i++) {
-  //get random character from user specified characters.
-  var characterType = criteria.characterTypes[Math.floor(math.random()* criteria.characterTypes.length)];
-  var character = characterType[Math.floor(Math.random()*characterType.length)];
-  // adding the characters to the password?
-  password += character;
+  // Create an empty password
+  var password = "";
 
+  // Loop through the desired password length
+  for (var i = 0; i < criteria.length; i++) {
+    // Get a random character from the selected character types
+    var characterType = criteria.characterTypes[Math.floor(Math.random() * criteria.characterTypes.length)];
+    var character = characterType[Math.floor(Math.random() * characterType.length)];
+
+    // Add the character to the password
+    password += character;
+  }
+
+  // Return the password
+  return password;
 }
-return password;
+
+// Get the password criteria from the user
+var criteria = getPasswordCriteria();
+
+// If the criteria is valid, generate a password
+if (criteria) {
+  var password = generatePassword(criteria);
+
+  // Display the password to the user
+  alert("Your password is: " + password);
 }
+
+
+
+
+
+
+
+
+
